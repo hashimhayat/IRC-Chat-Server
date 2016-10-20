@@ -1,0 +1,122 @@
+Test Cases
+
+------------------------------------------------------------------------
+Test Case - 1:
+"Server Connection"
+
+Input: 
+./sircd 1 node1.conf 
+Expected Output: 
+I am node 1 and I listen on port 20102 for new users
+Server is Listening...
+Output: 
+I am node 1 and I listen on port 20102 for new users
+Server is Listening...
+Comments:
+TEST PASSED
+------------------------------------------------------------------------
+Test Case - 2:
+"Client Connection"
+
+Input: 
+./sircc
+Expected Output: 
+Connecting to server 127.0.0.1 at port 6667 ...
+SERVER IP 16777343
+Connected, ready for commands:
+Output: 
+Connecting to server 127.0.0.1 at port 6667 ...
+SERVER IP 16777343
+Connected, ready for commands:
+Comments:
+TEST PASSED
+------------------------------------------------------------------------
+Test Case - 4:
+"Register NICK"
+
+Input: 
+NICK #hash
+Expected Output: 
+:hash your nick has been registered!
+Output: 
+:hash your nick has been registered!
+Comments:
+TEST PASSED
+------------------------------------------------------------------------
+Test Case - 4.1:
+"Register NICK: without param"
+
+Input: 
+NICK
+Expected Output: 
+Error 461: ERR_NEEDMOREPARAMS
+Output: 
+Error 461: ERR_NEEDMOREPARAMS
+Comments:
+TEST PASSED
+------------------------------------------------------------------------
+Test Case - 4.1:
+"Register NICK: without param"
+
+Input: 
+NICK
+Expected Output: 
+Error 461: ERR_NEEDMOREPARAMS
+Output: 
+Error 461: ERR_NEEDMOREPARAMS
+Comments:
+TEST PASSED
+------------------------------------------------------------------------
+Test Case - 4.2:
+"Change NICK"
+
+Input: 
+NICK #john, where previous NICK is hash
+Expected Output: 
+Your nick has been changed to john! 
+Output: 
+Your nick has been changed to john! 
+Comments:
+TEST PASSED
+------------------------------------------------------------------------
+Test Case - 5:
+"Set USER"
+
+Input: 
+USER guest tolmoon tolsun :Ronnie Reagan
+Expected Output: 
+User Information Registered.
+Output: 
+User Information Registered. 
+Comments:
+TEST PASSED
+------------------------------------------------------------------------
+Test Case - 5.1:
+"Set USER without enough params"
+
+Input: 
+USER guest tolmoon tolsun
+Expected Output: 
+Error 461: ERR_NEEDMOREPARAMS
+Output: 
+Error 461: ERR_NEEDMOREPARAMS
+Comments:
+TEST PASSED
+------------------------------------------------------------------------
+Test Case - 5.2:
+"Set new values to USER"
+
+Input: 
+USER test test test test
+Expected Output: 
+Error 462: Already Registered.
+Output: 
+Error 462: Already Registered.
+Comments:
+TEST PASSED
+------------------------------------------------------------------------
+
+
+
+
+
